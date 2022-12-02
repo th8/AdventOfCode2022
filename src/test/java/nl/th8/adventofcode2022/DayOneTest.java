@@ -1,7 +1,6 @@
 package nl.th8.adventofcode2022;
 
 import nl.th8.adventofcode2022.utils.PuzzleInputParser;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,6 +34,6 @@ class DayOneTest {
 
     @Test
     void solvePart2() {
-        assertEquals(11, dayOne.solvePart2());
+        assertEquals(11, dayOne.solvePartTwo());
     }
 }

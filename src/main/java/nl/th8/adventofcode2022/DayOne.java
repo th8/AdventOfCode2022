@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DayOne {
+public class DayOne implements Day {
     private static final int PART_TWO_ELVES = 3;
 
     private final PuzzleInputParser puzzleInputParser;
@@ -35,10 +35,14 @@ public class DayOne {
     /**
      * To solve part 2 of day one we simply need to sum the first three items from our sorted foodmap.
      */
-    public int solvePart2() {
+    public int solvePartTwo() {
         int topXCalories = processFoodMap().stream().mapToInt(Map.Entry::getValue).limit(PART_TWO_ELVES).sum();
         System.out.printf("The top %d elves are carrying %d calories of food%n", PART_TWO_ELVES, topXCalories);
         return topXCalories;
+    }
+
+    public int getDayNumber() {
+        return 1;
     }
 
 
