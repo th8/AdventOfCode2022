@@ -39,4 +39,16 @@ public class PuzzleInputParser {
             throw new IllegalArgumentException("Unable to read input file, I can't solve puzzles like this! Bye.");
         }
     }
+
+    /**
+     * @return a list of Strings for each line of the file.
+     */
+    public List<String> getInputAsStringList() {
+        try(var fileStream = Files.lines(puzzleInputPath)) {
+            return fileStream.toList();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new IllegalArgumentException("Unable to read input file, I can't solve puzzles like this! Bye.");
+        }
+    }
 }

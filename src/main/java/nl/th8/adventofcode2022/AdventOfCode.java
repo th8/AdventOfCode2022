@@ -19,6 +19,14 @@ public class AdventOfCode {
         stopWatch.stop();
 
         /* Day two */
+        DayTwo dayTwo = new DayTwo();
+        stopWatch.start("Day 2.1");
+        dayTwo.solvePart1();
+        stopWatch.stop();
+        stopWatch.start("Day 2.2");
+        dayTwo.solvePart2();
+        stopWatch.stop();
+
 
 
 
