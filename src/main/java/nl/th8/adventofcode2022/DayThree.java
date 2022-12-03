@@ -18,8 +18,8 @@ public class DayThree implements Day {
 
     /**
      * To find duplicates items in the two compartments of each backpack we split the contents in half.
-     * We convert the second compartment to a set for O(1) instead of O(n) for String::charAt or String::contains lookups for each character in compartment one.
-     * Finally we encode it with our a1Z52 cypher
+     * We convert the second compartment to a Set for O(1) lookups instead of O(n) for String::charAt or String::contains for each character in compartment one.
+     * Finally, we encode it with our a1Z52 cypher
      *
      * @return sum of all a1Z52 encoded duplicated
      */
@@ -54,8 +54,10 @@ public class DayThree implements Day {
 
         AtomicInteger rucksackIndex = new AtomicInteger(0);
         var result = inputList.stream()
+                //Create sublists for every three entries in the list
                 .collect(Collectors.groupingBy(item -> rucksackIndex.getAndIncrement() /3))
                 .values().stream()
+                //Convert each sublist to a priority number
                 .mapToInt(rucksackGroup -> {
                     var rucksackOne = rucksackGroup.get(0);
                     var rucksackTwoChars = rucksackGroup.get(1).chars().mapToObj(c -> (char)c).collect(Collectors.toSet());
